@@ -26,3 +26,21 @@ export const getFilmsByQuery = async query => {
   console.log(results)
   return results;
 };
+
+
+
+export const getReviewByFilm = async id => {
+  const {
+    data: { results },
+  } = await axios.get(
+    `/movie/${id}/reviews?api_key=${API_KEY}&language=en-US&page=1`
+  );
+  return results;
+};
+
+export const getActorsByFilm = async id => {
+  const {
+    data: { cast },
+  } = await axios.get(`/movie/${id}/credits?api_key=${API_KEY}&language=en-US`);
+  return cast;
+};

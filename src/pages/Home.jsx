@@ -6,12 +6,13 @@ export const Home = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    getTrandingFilms().then(setMovies)
+    getTrandingFilms().then(setMovies);
   }, []);
 
   return (
     <>
-      <MoviesList movies={ movies } />
+      <h1 className="Home_title">Most Popular films</h1>
+      <MoviesList movies={movies} />
     </>
   );
 };
