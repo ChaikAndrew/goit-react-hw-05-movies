@@ -2,6 +2,7 @@ import { getFilmsByQuery } from '../servises/api';
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { MoviesList } from 'components/MoviesList';
+import { FcSearch } from 'react-icons/fc';
 
 export const Movies = () => {
   const [movie, setMovies] = useState([]);
@@ -36,7 +37,9 @@ export const Movies = () => {
           placeholder="Enter the movie name"
           onChange={onChange}
         />
-        <button type="submit">Search</button>
+        <button type="submit" className="Search_btn">
+          <FcSearch className="Search_btn-icon" />
+        </button>
       </form>
       <MoviesList movies={movie} />
     </>

@@ -23,11 +23,9 @@ export const getFilmsByQuery = async query => {
   } = await axios.get(
     `/search/movie?api_key=${API_KEY}&query=${query}&language=en-US&page=1&include_adult=false`
   );
-  console.log(results)
+  console.log(results);
   return results;
 };
-
-
 
 export const getReviewByFilm = async id => {
   const {
@@ -43,4 +41,12 @@ export const getActorsByFilm = async id => {
     data: { cast },
   } = await axios.get(`/movie/${id}/credits?api_key=${API_KEY}&language=en-US`);
   return cast;
+};
+
+export const getGenres = async movieId => {
+  const {
+    data: { genres },
+  } = await axios.get(`/movie/${movieId}?api_key=${API_KEY}`);
+  // console.log(res.data.genres)
+  return genres;
 };

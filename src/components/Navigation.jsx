@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { FcHome, FcClapperboard } from 'react-icons/fc';
 
 export const Navigation = () => {
   return (
@@ -9,9 +10,12 @@ export const Navigation = () => {
         })}
         to="/"
       >
-        Home
+        <FcHome className="Nav_icon" />
       </NavLink>
-      <NavLink to="/movies">Movies</NavLink>
+
+      <NavLink to="/movies">
+        <FcClapperboard className="Nav_icon" />
+      </NavLink>
     </nav>
   );
 };
