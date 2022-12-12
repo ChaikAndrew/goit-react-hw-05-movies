@@ -31,10 +31,15 @@ const MovieDetails = () => {
     navigate(backLinkHref);
   };
 
+  function getTimeFromMins(mins) {
+    let hours = Math.trunc(mins / 60);
+    let minutes = mins % 60;
+    return hours + ':' + minutes;
+  }
+
   return (
     <>
       <div className="Movie_info">
-        
         <button className="Back_btn" type="button" onClick={handleGoBack}>
           <BsFillArrowLeftSquareFill className="Back_btn-icon" />
         </button>
@@ -49,15 +54,25 @@ const MovieDetails = () => {
 
         <div className="Movie_info-container">
           <p className="Movie_info-title">
-            Popularity:
+            Release date:{' '}
+            <span className="Movie_info-raiting">{movie.release_date}</span>
+          </p>
+          <p className="Movie_info-title">
+            Popularity:{' '}
             <span className="Movie_info-raiting">
               {movie.popularity.toFixed(0)}
             </span>
           </p>
           <p className="Movie_info-title">
-            Vote Average:
+            Vote Average:{' '}
             <span className="Movie_info-raiting">
               {movie.vote_average.toFixed(1)}
+            </span>
+          </p>
+          <p className="Movie_info-title">
+            Runtime:{' '}
+            <span className="Movie_info-raiting">
+              {getTimeFromMins(movie.runtime)}
             </span>
           </p>
         </div>

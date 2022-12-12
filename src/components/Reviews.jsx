@@ -19,7 +19,7 @@ const Reviews = () => {
     <>
       <ul>
         {review.length === 0 ? (
-          <div> Sorry we don t have reviews </div>
+          <div> Sorry we dont have reviews </div>
         ) : (
           review.map(el => (
             <li className="Info_author" key={el.id}>

@@ -195,6 +195,17 @@ a.active {
   background-color: transparent;
 }
 
+.Search_btn {
+  opacity: 0.8;
+  transition-property: opacity;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.Search_btn:hover,
+.Search_btn:focus {
+  opacity: 1;
+}
+
 .Back_btn-icon {
   color: rgb(236, 79, 0);
   width: 30px;
