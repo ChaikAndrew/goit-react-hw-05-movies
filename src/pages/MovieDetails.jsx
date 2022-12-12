@@ -57,18 +57,21 @@ const MovieDetails = () => {
             Release date:{' '}
             <span className="Movie_info-raiting">{movie.release_date}</span>
           </p>
+
           <p className="Movie_info-title">
             Popularity:{' '}
             <span className="Movie_info-raiting">
               {movie.popularity.toFixed(0)}
             </span>
           </p>
+
           <p className="Movie_info-title">
             Vote Average:{' '}
             <span className="Movie_info-raiting">
               {movie.vote_average.toFixed(1)}
             </span>
           </p>
+
           <p className="Movie_info-title">
             Runtime:{' '}
             <span className="Movie_info-raiting">
@@ -86,7 +89,7 @@ const MovieDetails = () => {
             </li>
           ))}
         </ul>
-
+        <p className="Info_title">More info:</p>
         <NavLink to="cast" state={location.state}>
           Cast
         </NavLink>

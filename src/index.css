@@ -155,7 +155,8 @@ a.active {
   z-index: 1;
 }
 
-.Ganres_title {
+.Ganres_title,
+.Info_title {
   font-size: 20px;
   margin: 10px 0;
   text-align: center;
