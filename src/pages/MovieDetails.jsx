@@ -6,7 +6,7 @@ import { BASE_IMG_URL } from '../components/MoviesList';
 
 import { BsFillArrowLeftSquareFill } from 'react-icons/bs';
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
   const [movie, setMovies] = useState(null);
   const { movieId } = useParams();
   const navigate = useNavigate();
@@ -26,31 +26,35 @@ export const MovieDetails = () => {
   }
 
   const handleGoBack = () => {
-    navigate(location.state.from);
+    const backLinkHref = location.state?.from ?? '/';
+
+    navigate(backLinkHref);
   };
 
   return (
     <>
       <div className="Movie_info">
+        
         <button className="Back_btn" type="button" onClick={handleGoBack}>
           <BsFillArrowLeftSquareFill className="Back_btn-icon" />
         </button>
 
         <h2>{movie.title}</h2>
+
         <img
           className="Movie_info-img"
           src={BASE_IMG_URL + movie.poster_path}
           alt={movie.title}
         />
+
         <div className="Movie_info-container">
-          <p className="Movie-info_title">
+          <p className="Movie_info-title">
             Popularity:
             <span className="Movie_info-raiting">
               {movie.popularity.toFixed(0)}
             </span>
           </p>
-
-          <p className="Movie-info_title">
+          <p className="Movie_info-title">
             Vote Average:
             <span className="Movie_info-raiting">
               {movie.vote_average.toFixed(1)}
@@ -59,6 +63,7 @@ export const MovieDetails = () => {
         </div>
 
         <p className="Ganres_title">Ganres:</p>
+
         <ul className="Ganres_list">
           {genres.map(({ id, name }) => (
             <li className="Ganres_item" key={id}>
@@ -66,6 +71,7 @@ export const MovieDetails = () => {
             </li>
           ))}
         </ul>
+
         <NavLink to="cast" state={location.state}>
           Cast
         </NavLink>
@@ -77,3 +83,5 @@ export const MovieDetails = () => {
     </>
   );
 };
+
+export default MovieDetails;

@@ -5,10 +5,8 @@ import { BASE_IMG_URL } from './MoviesList';
 import { getActorsByFilm } from '../servises/api';
 const posterFakeUrl = 'https://titterfun.com/api/assets/image/1m7fesydid42.jpg';
 
-export const Cast = () => {
+const Cast = () => {
   const [cast, setCast] = useState([]);
-  console.log(cast);
-
   const { movieId } = useParams();
 
   useEffect(() => {
@@ -53,3 +51,5 @@ export const Cast = () => {
     </div>
   );
 };
+
+export default Cast;

@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { FcHome, FcClapperboard } from 'react-icons/fc';
 
-export const Navigation = () => {
+const Navigation = () => {
   return (
     <nav className="Nav_list">
       <NavLink
@@ -19,3 +19,5 @@ export const Navigation = () => {
     </nav>
   );
 };
+
+export default Navigation;

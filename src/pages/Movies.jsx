@@ -4,7 +4,7 @@ import { useSearchParams } from 'react-router-dom';
 import { MoviesList } from 'components/MoviesList';
 import { FcSearch } from 'react-icons/fc';
 
-export const Movies = () => {
+const Movies = () => {
   const [movie, setMovies] = useState([]);
   const [query, steQuery] = useState('');
 
@@ -15,7 +15,6 @@ export const Movies = () => {
     if (!movieName) {
       return;
     }
-    console.log(movieName);
     getFilmsByQuery(movieName).then(setMovies);
   }, [params]);
 
@@ -45,3 +44,5 @@ export const Movies = () => {
     </>
   );
 };
+
+export default Movies;

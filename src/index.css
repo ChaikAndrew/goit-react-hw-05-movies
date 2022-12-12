@@ -234,10 +234,9 @@ a.active {
 
 .Movie_info-container {
   display: flex;
-  flex-direction: column;
 }
 
-.Movie-info_title {
+.Movie_info-title {
   padding: 10px;
   text-align: center;
 }

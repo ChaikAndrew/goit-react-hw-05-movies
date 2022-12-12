@@ -47,6 +47,5 @@ export const getGenres = async movieId => {
   const {
     data: { genres },
   } = await axios.get(`/movie/${movieId}?api_key=${API_KEY}`);
-  // console.log(res.data.genres)
   return genres;
 };
