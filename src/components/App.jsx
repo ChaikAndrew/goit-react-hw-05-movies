@@ -12,7 +12,7 @@ export const App = () => {
   return (
     <>
       <Navigation />
-      <Suspense fallback={<div>...Loading</div>}>
+      <Suspense fallback={<>...Loading</>}>
         <Routes>
           <Route index element={<Home />} />
           <Route path="/movies" element={<Movies />} />
